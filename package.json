@@ -1,1 +1,40 @@
-{     "devDependencies": {         "webpack-validator": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-webpack-validator",     "homepage": "https://github.com/npmtest/node-npmtest-webpack-validator",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-webpack-validator.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [webpack-validator (v3.0.0)](https://github.com/js-dxtools/webpack-validator#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-webpack-validator.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-webpack-validator) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-webpack-validator.svg)](https://travis-ci.org/npmtest/node-npmtest-webpack-validator)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha",
+        "webpack-validator": "*"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-webpack-validator",
+    "keywords": [
+        "coverage",
+        "test",
+        "webpack-validator"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_webpack_validator.js",
+    "name": "npmtest-webpack-validator",
+    "nameAlias": "npmtest_webpack_validator",
+    "nameOriginal": "npmtest-webpack-validator",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-webpack-validator.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
